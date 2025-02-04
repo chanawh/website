@@ -1,0 +1,72 @@
+/* src/components/Projects.css */
+.projects {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .projects h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .projects-search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .projects-sort {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .projects-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .projects-item {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+  }
+  
+  .projects-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .projects-item a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+  }
+  
+  .projects-item a:hover {
+    text-decoration: underline;
+  }
+  
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pagination button:hover {
+    background-color: #005bb5;
+  }
+  

@@ -1,14 +1,14 @@
-// src/components/Projects.js
+// src/components/Projects.tsx
 import React, { Suspense, useState } from 'react';
 import { ProjectsProvider, useProjects } from '../context/ProjectsContext';
 import './Projects.css';
 
 const ProjectsList = React.lazy(() => import('./ProjectsList'));
 
-const Projects = () => {
+const Projects: React.FC = () => {
   const { projects, error } = useProjects();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   const filteredProjects = projects
     .filter(project =>
@@ -50,7 +50,7 @@ const Projects = () => {
   );
 };
 
-const ProjectsContainer = () => (
+const ProjectsContainer: React.FC = () => (
   <ProjectsProvider>
     <Projects />
   </ProjectsProvider>
