@@ -2,13 +2,15 @@
 import React from 'react';
 import './About.css';
 import Projects from './Projects';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
     <div className="about">
-      <div className="hero">
-        <h1>Hello! I'm [Your Name]</h1>
-        <p>A passionate developer with expertise in [Your Skills]</p>
+      <div className="hero" style={{ backgroundImage: 'url(/path/to/your/image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>Hello! I'm Andrew</motion.h1>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>A passionate developer with expertise in Python and JavaScript</motion.p>
+        <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }} className="cta-button">Explore My Projects</motion.button>
       </div>
       <div className="content">
         <section className="bio">

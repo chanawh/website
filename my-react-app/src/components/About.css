@@ -20,12 +20,25 @@
 .hero h1 {
   font-size: 3em;
   margin: 0;
-  animation: fadeIn 2s ease-in-out;
 }
 
 .hero p {
   font-size: 1.5em;
-  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
 }
 
 .content {
@@ -66,13 +79,4 @@ section {
 
 .contact a:hover {
   text-decoration: underline;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
