@@ -1,72 +1,79 @@
 /* src/components/Projects.css */
 .projects {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-  }
-  
-  .projects h3 {
-    text-align: center;
-    color: #333;
-  }
-  
-  .projects-search {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .projects-sort {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .projects-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .projects-item {
-    background: #f9f9f9;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 4px;
-    transition: transform 0.2s;
-  }
-  
-  .projects-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .projects-item a {
-    text-decoration: none;
-    color: #0073e6;
-    font-weight: bold;
-  }
-  
-  .projects-item a:hover {
-    text-decoration: underline;
-  }
-  
-  .pagination {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #0073e6;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .pagination button:hover {
-    background-color: #005bb5;
-  }
-  
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 800px; /* Increased width for more content space */
+  margin: auto;
+  background-color: #ffffff; /* Added background color for better contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle box-shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.projects h3 {
+  text-align: center;
+  color: #2c3e50; /* Text Color */
+  margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.projects-search {
+  width: 100%;
+  padding: 12px; /* Increased padding for better usability */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Added inner shadow for depth */
+}
+
+.projects-sort {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.projects-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.projects-item {
+  background: #f9f9f9;
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  padding: 20px; /* Increased padding for better content space */
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Added transition for box-shadow */
+}
+
+.projects-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Added box-shadow on hover */
+}
+
+.projects-item a {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+}
+
+.projects-item a:hover {
+  text-decoration: underline;
+  color: #005bb5; /* Darker color on hover for better visibility */
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 8px 15px; /* Increased padding for better usability */
+  border: none;
+  background-color: #0073e6; /* Primary Color */
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Added transition for background color */
+}
+
+.pagination button:hover {
+  background-color: #005bb5;
+}

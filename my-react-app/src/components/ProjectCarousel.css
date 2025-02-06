@@ -1,0 +1,11 @@
+/* src/components/ProjectCarousel.css */
+.carousel-container {
+  width: 80%;
+  margin: auto;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

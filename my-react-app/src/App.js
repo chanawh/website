@@ -6,6 +6,7 @@ import About from './components/About';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
+import ProjectCarousel from './components/ProjectCarousel'; // Importing the ProjectCarousel component
 import './App.css';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <div className="App">
         <Navbar />
         <h1>Welcome to My Portfolio</h1>
+        <ProjectCarousel /> {/* Including the ProjectCarousel component */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

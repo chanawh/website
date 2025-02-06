@@ -1,14 +1,16 @@
 // src/components/Projects.js
 import React, { Suspense, useState } from 'react';
 import { ProjectsProvider, useProjects } from '../context/ProjectsContext';
+import ProjectModal from './ProjectModal'; // Import the ProjectModal component
 import './Projects.css';
 
-const ProjectsList = React.lazy(() => import('./ProjectsList'));
+const ProjectsList = React.lazy(() => import('./ProjectsList')); // Lazy load ProjectsList
 
 const Projects = () => {
   const { projects, error } = useProjects();
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
+  const [selectedProject, setSelectedProject] = useState(null); // State for selected project
 
   const filteredProjects = projects
     .filter(project =>
@@ -44,8 +46,18 @@ const Projects = () => {
         </select>
       </div>
       <Suspense fallback={<div>Loading...</div>}>
-        <ProjectsList projects={filteredProjects} />
+        <ProjectsList
+          projects={filteredProjects}
+          onProjectClick={project => setSelectedProject(project)} // Handle project click
+        />
       </Suspense>
+      {selectedProject && (
+        <ProjectModal
+          isOpen={!!selectedProject}
+          onRequestClose={() => setSelectedProject(null)}
+          project={selectedProject}
+        />
+      )}
     </div>
   );
 };

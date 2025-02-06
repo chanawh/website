@@ -1,5 +1,41 @@
+/* src/styles/App.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ecf0f1; /* Background Color */
+  color: #2c3e50; /* Text Color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50; /* Text Color */
+}
+
+a {
+  color: #3498db; /* Primary Color */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #2980b9;
+}
+
+.navbar {
+  background-color: #2ecc71; /* Secondary Color */
+}
+
+.button {
+  background-color: #e74c3c; /* Accent Color */
+  color: white;
+}
+
+.button:hover {
+  background-color: #c0392b;
+}
+
+/* Additional styles from your original App.css */
 .App {
   text-align: center;
+  margin: 20px;
 }
 
 .App-logo {
@@ -22,10 +58,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.App-header:hover {
+  background-color: #1c1f25;
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #21a1f1;
+  text-decoration: underline;
 }
 
 @keyframes App-logo-spin {

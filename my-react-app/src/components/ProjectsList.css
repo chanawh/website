@@ -1,0 +1,33 @@
+/* src/components/ProjectsList.css */
+
+.projects-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects-item {
+  background: #f9f9f9;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.projects-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.projects-item a {
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: bold;
+  display: block;
+}
+
+.projects-item a:hover {
+  text-decoration: underline;
+  color: #005bb5;
+}
