@@ -1,55 +1,58 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React, { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { Typewriter } from 'react-simple-typewriter';
 
-// Keyframes for animation
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// Define light and dark themes
+const lightTheme = {
+  background: '#ffffff',
+  color: '#000000',
+  buttonBackground: '#007bff',
+  buttonHoverBackground: '#0056b3'
+};
 
+const darkTheme = {
+  background: '#000000',
+  color: '#ffffff',
+  buttonBackground: '#555555',
+  buttonHoverBackground: '#333333'
+};
+
+// Define styled components with theme properties
 const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('/path-to-your-background-image.jpg') no-repeat center center/cover;
-  color: #fff;
+  background: ${props => props.theme.background};
+  color: ${props => props.theme.color};
   text-align: center;
   padding: 2rem;
+  transition: background 0.3s ease, color 0.3s ease;
 `;
 
 const Title = styled.h2`
   font-size: 3rem;
   margin-bottom: 1rem;
-  animation: ${fadeIn} 1s ease-in-out;
 `;
 
 const Paragraph = styled.p`
   font-size: 1.5rem;
   margin-bottom: 2rem;
-  animation: ${fadeIn} 1.5s ease-in-out;
 `;
 
 const CTAButton = styled.button`
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  color: #fff;
-  background: #007bff;
+  color: ${props => props.theme.color};
+  background: ${props => props.theme.buttonBackground};
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
-  animation: ${fadeIn} 2s ease-in-out;
+  transition: background 0.3s, color 0.3s;
 
   &:hover {
-    background: #0056b3;
+    background: ${props => props.theme.buttonHoverBackground};
   }
 `;
 
@@ -63,23 +66,55 @@ const Skill = styled.div`
   margin: 0 1rem;
   font-size: 1.2rem;
   color: #ffd700;
-  animation: ${fadeIn} 2.5s ease-in-out;
+`;
+
+const ToggleButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #ccc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 const Home = () => {
+  const [theme, setTheme] = useState(lightTheme);
+
+  const toggleTheme = () => {
+    setTheme(theme === lightTheme ? darkTheme : lightTheme);
+  };
+
   const skills = ['React', 'JavaScript', 'CSS', 'HTML', 'Node.js', 'Git'];
 
   return (
-    <HomeContainer>
-      <Title>Welcome Home</Title>
-      <Paragraph>Explore my portfolio to see my projects and learn more about me.</Paragraph>
-      <CTAButton onClick={() => window.location.href = '/projects'}>View Projects</CTAButton>
-      <SkillsContainer>
-        {skills.map((skill, index) => (
-          <Skill key={index}>{skill}</Skill>
-        ))}
-      </SkillsContainer>
-    </HomeContainer>
+    <ThemeProvider theme={theme}>
+      <HomeContainer>
+        <ToggleButton onClick={toggleTheme}>
+          {theme === lightTheme ? 'Dark Mode' : 'Light Mode'}
+        </ToggleButton>
+        <Title>
+          <Typewriter
+            words={['Welcome to My Portfolio', 'Discover My Projects', 'Let\'s Create Something Amazing']}
+            loop
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </Title>
+        <Paragraph>Explore my portfolio to see my projects and learn more about me.</Paragraph>
+        <CTAButton onClick={() => window.location.href = '/projects'}>View Projects</CTAButton>
+        <SkillsContainer>
+          {skills.map((skill, index) => (
+            <Skill key={index}>{skill}</Skill>
+          ))}
+        </SkillsContainer>
+      </HomeContainer>
+    </ThemeProvider>
   );
 };
 
