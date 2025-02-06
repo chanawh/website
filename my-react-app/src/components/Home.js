@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Typewriter } from 'react-simple-typewriter';
+import ParticlesBg from 'particles-bg';
 
 // Define light and dark themes
 const lightTheme = {
@@ -95,6 +96,7 @@ const Home = () => {
         <ToggleButton onClick={toggleTheme}>
           {theme === lightTheme ? 'Dark Mode' : 'Light Mode'}
         </ToggleButton>
+        <ParticlesBg type="circle" bg={true} />
         <Title>
           <Typewriter
             words={['Welcome to My Portfolio', 'Discover My Projects', 'Let\'s Create Something Amazing']}
